@@ -13,44 +13,44 @@ describe("Employee class", () => {
   
   describe("Input validation", () => {
     it("Throws an error if provided no arguments", () => {
-      const employee = new Employee();
+      const cb = () => new Employee();
   
-      expect(employee).toThrow();
+      expect(cb).toThrow();
     });
   
     it("Throws an error if 'name' is not a string", () => {
-      const employee = new Employee(1);
-      const err = new Error("Expected 'name' parameter to be a string");
+      const cb = () => new Employee(1);
+      const err = new Error("Expected 'name' parameter to be a non-empty string");
       
-      expect(employee).toThrowError(err);
+      expect(cb).toThrowError(err);
     });
     
     it("Throws an error if 'name' is an empty string", () => {
-      const employee = new Employee("");
+      const cb = () => new Employee("");
       const err = new Error("Expected 'name' parameter to be a non-empty string");
   
-      expect(employee).toThrowError(err);
+      expect(cb).toThrowError(err);
     });
   
     it("Throws an error if id is not a number", () => {
-      const employee = new Employee("John", "1");
-      const err = new Error("Expected 'id' parameter to be a number");
+      const cb = () => new Employee("John", "1");
+      const err = new Error("Expected 'id' parameter to be a non-negative number");
   
-      expect(employee).toThrowError(err);
+      expect(cb).toThrowError(err);
     });
   
     it("Throws an error if id is a negative number", () => {
-      const employee = new Employee("John", -1);
+      const cb = () => new Employee("John", -1);
       const err = new Error("Expected 'id' parameter to be a non-negative number");
   
-      expect(employee).toThrowError(err);
+      expect(cb).toThrowError(err);
     })
   
     it("Throws an error if email is not a string", () => {
-      const employee = new Employee("John", 111, 2);
+      const cb = () => new Employee("John", 111, 2);
       const err = new Error("Expected 'email' parameter to be a string");
   
-      expect(employee).toThrowError(err);
+      expect(cb).toThrowError(err);
     });
 
   });
