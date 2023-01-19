@@ -32,27 +32,33 @@ describe("Employee class", () => {
       expect(cb).toThrowError(err);
     });
   
-    it("Throws an error if id is not a number", () => {
+    it("Throws an error if 'id' is not a number", () => {
       const cb = () => new Employee("John", "1");
       const err = new Error("Expected 'id' parameter to be a non-negative number");
   
       expect(cb).toThrowError(err);
     });
   
-    it("Throws an error if id is a negative number", () => {
+    it("Throws an error if 'id' is a negative number", () => {
       const cb = () => new Employee("John", -1);
       const err = new Error("Expected 'id' parameter to be a non-negative number");
   
       expect(cb).toThrowError(err);
     });
   
-    it("Throws an error if email is not a string", () => {
+    it("Throws an error if 'email' is not a string", () => {
       const cb = () => new Employee("John", 111, 2);
-      const err = new Error("Expected 'email' parameter to be a string");
+      const err = new Error("Expected 'email' parameter to be a non-empty string");
   
       expect(cb).toThrowError(err);
     });
 
+    it("Throws an error if 'email' is an empty string", () => {
+      const cb = () => new Employee("John", 1, "");
+      const err = new Error("Expected 'email' parameter to be a non-empty string");
+  
+      expect(cb).toThrowError(err);
+    });
   });
 
   describe("Object methods", () => {
