@@ -3,10 +3,10 @@ const Employee = require("../lib/Employee");
 describe("Employee class", () => {
   describe("Object initialization", () => {
     it("Creates an object with name, id, and email", () => {
-      const employee = new Employee("John", 111, "john@email.com");
+      const employee = new Employee("John", 1, "john@email.com");
   
       expect(employee.name).toEqual("John");
-      expect(employee.id).toEqual(111);
+      expect(employee.id).toEqual(1);
       expect(employee.email).toEqual("john@email.com");
     });
   });
@@ -44,7 +44,7 @@ describe("Employee class", () => {
       const err = new Error("Expected 'id' parameter to be a non-negative number");
   
       expect(cb).toThrowError(err);
-    })
+    });
   
     it("Throws an error if email is not a string", () => {
       const cb = () => new Employee("John", 111, 2);
@@ -75,7 +75,7 @@ describe("Employee class", () => {
     });
 
     it("Returns the role", () => {
-      const employee = new Employee("John", 111, "john@email.com");
+      const employee = new Employee("John", 1, "john@email.com");
 
       expect(employee.getRole()).toEqual("Employee");
     });
