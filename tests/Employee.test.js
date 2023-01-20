@@ -62,25 +62,25 @@ describe("Employee class", () => {
   });
 
   describe("Object methods", () => {
-    it("Returns the name", () => {
+    it("getName() returns the name", () => {
       const employee = new Employee("John", 111, "john@email.com");
 
       expect(employee.getName()).toEqual("John");
     });
 
-    it("Returns the id", () => {
+    it("getId() returns the id", () => {
       const employee = new Employee("John", 111, "john@email.com");
 
       expect(employee.getId()).toEqual(111);
     });
 
-    it("Returns the email", () => {
+    it("getEmail() returns the email", () => {
       const employee = new Employee("John", 111, "john@email.com");
 
       expect(employee.getEmail()).toEqual("john@email.com");
     });
 
-    it("Returns the role", () => {
+    it("getRole returns 'Employee'", () => {
       const employee = new Employee("John", 1, "john@email.com");
 
       expect(employee.getRole()).toEqual("Employee");

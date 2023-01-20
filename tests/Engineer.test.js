@@ -39,13 +39,13 @@ describe("Engineer subclass", () => {
   });
 
   describe("Object methods", () => {
-    it("Returns the GitHub username", () => {
+    it("getGithub() returns the GitHub username", () => {
       const engineer = new Engineer("John", 1, "john@email.com", "john");
 
       expect(engineer.getGithub()).toEqual("john");
     })
 
-    it("Returns the role", () => {
+    it("getRole returns 'Engineer'", () => {
       const engineer = new Engineer("John", 1, "john@email.com", "john");
 
       expect(engineer.getRole()).toEqual("Engineer");
