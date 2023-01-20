@@ -6,7 +6,7 @@ describe("Manager subclass", () => {
     it("Creates an object with name, id, email, and officeNum", () => {
       const manager = new Manager("John", 1, "john@email.com", 123);
 
-      expect(manager).toEqual({ name: "John", id: 1, email: "john@email.com", officeNumber: 123 });
+      expect(manager).toEqual({ name: "John", id: 1, email: "john@email.com", officeNum: 123 });
     });
 
     it("Creates a subclass of Employee class", () => {
